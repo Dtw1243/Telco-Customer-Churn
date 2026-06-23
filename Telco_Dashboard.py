@@ -24,6 +24,31 @@ churned = (data["Churn"] == "Yes").sum()
 
 retention_rate = (retained / len(data)) * 100
 
+
+# =========================
+# FIG1: CHURN BY CONTRACT
+# =========================
+fig1, ax1 = plt.subplots()
+
+contract_churn = pd.crosstab(data["Contract"], data["Churn"])
+
+contract_churn.plot(kind="bar", ax=ax1)
+
+ax1.set_title("Churn by Contract Type")
+ax1.set_xlabel("Contract Type")
+ax1.set_ylabel("Number of Customers")
+
+
+# =========================
+# FIG2: TENURE DISTRIBUTION
+# =========================
+fig2, ax2 = plt.subplots()
+
+ax2.hist(data["tenure"], bins=20)
+
+ax2.set_title("Customer Tenure Distribution")
+ax2.set_xlabel("Tenure (months)")
+ax2.set_ylabel("Number of Customers")
 col1, col2, col3 = st.columns(3)
 
 col1.metric("Customers", len(data))
