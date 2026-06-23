@@ -4,7 +4,7 @@ import streamlit as st
 
 st.title("Telco Customer Churn Dashboard")
 
-data = pd.read_csv(r"C:\Users\dtw12\OneDrive\Documents\Projects\Data Analytics Projects\Telco Customer Retention Data Project\Telco Customer Retention CSV.csv")
+data = pd.read_csv("Telco Customer Retention CSV.csv")
 
 # setting up a section header and displaying the first few rows of the dataframe
 st.subheader("Customer Churn Overview")
